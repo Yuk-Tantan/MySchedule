@@ -1,0 +1,419 @@
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ bin/rails:9
+  [1m[35m (5.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateSchedules (20210611072533)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "schedules" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "start_date" varchar, "end_date" varchar, "all_day" boolean, "note" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20210611072533_create_schedules.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210611072533"]]
+  ↳ bin/rails:9
+  [1m[35m (4.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-06-11 07:26:44.590926"], ["updated_at", "2021-06-11 07:26:44.590926"]]
+  ↳ bin/rails:9
+  [1m[35m (4.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for 182.248.231.162 at 2021-06-11 07:29:22 +0000
+Cannot render console from 182.248.231.162! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/railties-5.2.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/railties-5.2.6/lib/rails/templates/rails/welcome/index.html.erb (4.9ms)
+Completed 200 OK in 23ms (Views: 15.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 182.248.231.162 at 2021-06-11 07:29:29 +0000
+Cannot render console from 182.248.231.162! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/railties-5.2.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/railties-5.2.6/lib/rails/templates/rails/welcome/index.html.erb (2.9ms)
+Completed 200 OK in 10ms (Views: 5.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/schedules" for 182.248.231.162 at 2021-06-11 07:29:57 +0000
+Cannot render console from 182.248.231.162! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [GET] "/schedules"):
+  
+actionpack (5.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/schedules" for 182.248.231.162 at 2021-06-11 07:31:46 +0000
+Cannot render console from 182.248.231.162! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+SyntaxError (/home/ec2-user/environment/MySchedule/config/routes.rb:2: syntax error, unexpected tIDENTIFIER, expecting end
+  get 'schedules' to: 'schedules#lists'
+                  ^~):
+  
+config/routes.rb:2: syntax error, unexpected tIDENTIFIER, expecting end
+Started GET "/schedules" for 182.248.231.162 at 2021-06-11 07:36:40 +0000
+Cannot render console from 182.248.231.162! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [GET] "/schedules"):
+  
+actionpack (5.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/schedules" for 182.248.231.162 at 2021-06-11 07:36:42 +0000
+Cannot render console from 182.248.231.162! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [GET] "/schedules"):
+  
+actionpack (5.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/schedules" for 182.248.231.162 at 2021-06-11 07:42:20 +0000
+Cannot render console from 182.248.231.162! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by SchedulesController#lists as HTML
+  Rendering schedules/lists.html.erb within layouts/application
+  [1m[36mSchedule Load (0.2ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules"[0m
+  ↳ app/views/schedules/lists.html.erb:22
+  Rendered schedules/lists.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 838ms (Views: 826.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/schedules" for 182.248.231.162 at 2021-06-11 07:42:48 +0000
+Cannot render console from 182.248.231.162! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by SchedulesController#lists as HTML
+  Rendering schedules/lists.html.erb within layouts/application
+  [1m[36mSchedule Load (0.2ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules"[0m
+  ↳ app/views/schedules/lists.html.erb:22
+  Rendered schedules/lists.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 213ms (Views: 206.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/schedules/new" for 182.248.231.162 at 2021-06-11 07:42:53 +0000
+Cannot render console from 182.248.231.162! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SchedulesController#new as HTML
+  Rendering schedules/new.html.erb within layouts/application
+  Rendered schedules/new.html.erb within layouts/application (11.9ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `merge' for ["1", "0"]:Array):
+    12:         <th><%= f.label :end_date, '終了日' %></th>
+    13:         <td><%= f.date_field :end_date %></td><!--https://qiita.com/___xxx_/items/ad5ce5d2a0090d8c6b6c 参考-->
+    14:         <th><%= f.label :end_date, '終日' %></th>
+    15:         <td><%= f.check_box :all_day, [checked_value = "1", unchecked_value = "0"] %></td><!--https://www.y-hakopro.com/entry/2020/01/22/%E3%80%90_f.check_box%E3%80%91%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF%E3%83%9C%E3%83%83%E3%82%AF%E3%82%B9%E3%82%92%E3%83%87%E3%83%95%E3%82%A9%E3%83%AB%E3%83%88%E3%81%A7%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF を参考-->
+    16:         <th><%= f.label :note, 'メモ' %></th>
+    17:         <td><%= f.text_field :note %></td>
+    18:     </tbody>
+  
+app/views/schedules/new.html.erb:15:in `block in _app_views_schedules_new_html_erb__1547487960169632971_42272200'
+app/views/schedules/new.html.erb:6:in `_app_views_schedules_new_html_erb__1547487960169632971_42272200'
+Started GET "/schedules/new" for 182.248.231.162 at 2021-06-11 07:45:55 +0000
+Cannot render console from 182.248.231.162! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SchedulesController#new as HTML
+  Rendering schedules/new.html.erb within layouts/application
+  Rendered schedules/new.html.erb within layouts/application (102.4ms)
+Completed 500 Internal Server Error in 105ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `bootstrap_form_for' for #<#<Class:0x00000000041c0d28>:0x00007f34ac02ef58>):
+    12:         <th><%= f.label :end_date, '終了日' %></th>
+    13:         <td><%= f.date_field :end_date %></td><!--https://qiita.com/___xxx_/items/ad5ce5d2a0090d8c6b6c 参考-->
+    14:         <th><%= f.label :end_date, '終日' %></th>
+    15:         <td><%= bootstrap_form_for @user do |f|%>
+    16:                 <%= f.check_box :all_day %>
+    17:             <% end %>
+    18:         </td><!--https://www.y-hakopro.com/entry/2020/01/22/%E3%80%90_f.check_box%E3%80%91%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF%E3%83%9C%E3%83%83%E3%82%AF%E3%82%B9%E3%82%92%E3%83%87%E3%83%95%E3%82%A9%E3%83%AB%E3%83%88%E3%81%A7%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF を参考-->
+  
+app/views/schedules/new.html.erb:15:in `block in _app_views_schedules_new_html_erb__1547487960169632971_69932100451280'
+app/views/schedules/new.html.erb:6:in `_app_views_schedules_new_html_erb__1547487960169632971_69932100451280'
+Started GET "/schedules/new" for 182.248.231.162 at 2021-06-11 07:55:35 +0000
+Cannot render console from 182.248.231.162! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SchedulesController#new as HTML
+  Rendering schedules/new.html.erb within layouts/application
+  Rendered schedules/new.html.erb within layouts/application (4.2ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `merge' for true:TrueClass):
+    12:         <th><%= f.label :end_date, '終了日' %></th>
+    13:         <td><%= f.date_field :end_date %></td><!--https://qiita.com/___xxx_/items/ad5ce5d2a0090d8c6b6c 参考-->
+    14:         <th><%= f.label :end_date, '終日' %></th>
+    15:         <td><%= f.check_box :all_day, true, false %></td><!--https://www.y-hakopro.com/entry/2020/01/22/%E3%80%90_f.check_box%E3%80%91%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF%E3%83%9C%E3%83%83%E3%82%AF%E3%82%B9%E3%82%92%E3%83%87%E3%83%95%E3%82%A9%E3%83%AB%E3%83%88%E3%81%A7%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF を参考-->
+    16:         <th><%= f.label :note, 'メモ' %></th>
+    17:         <td><%= f.text_field :note %></td>
+    18:     </tbody>
+  
+app/views/schedules/new.html.erb:15:in `block in _app_views_schedules_new_html_erb__1547487960169632971_69932071013680'
+app/views/schedules/new.html.erb:6:in `_app_views_schedules_new_html_erb__1547487960169632971_69932071013680'
+Started GET "/schedules/new" for 182.248.231.162 at 2021-06-11 07:55:58 +0000
+Cannot render console from 182.248.231.162! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SchedulesController#new as HTML
+  Rendering schedules/new.html.erb within layouts/application
+  Rendered schedules/new.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/ec2-user/environment/MySchedule/app/views/schedules/new.html.erb:15: syntax error, unexpected true, expecting ')'
+...( f.check_box :all_day, {} true, false );@output_buffer.safe...
+...                           ^~~~
+/home/ec2-user/environment/MySchedule/app/views/schedules/new.html.erb:15: Can't assign to true
+...( f.check_box :all_day, {} true, false );@output_buffer.safe...
+...                           ^~~~
+/home/ec2-user/environment/MySchedule/app/views/schedules/new.html.erb:15: Can't assign to false
+...ck_box :all_day, {} true, false );@output_buffer.safe_append...
+...                          ^~~~~
+/home/ec2-user/environment/MySchedule/app/views/schedules/new.html.erb:15: syntax error, unexpected ')', expecting '='
+..._box :all_day, {} true, false );@output_buffer.safe_append='...
+...                              ^
+/home/ec2-user/environment/MySchedule/app/views/schedules/new.html.erb:20: syntax error, unexpected end, expecting ')'
+'.freeze;     end 
+              ^~~
+/home/ec2-user/environment/MySchedule/app/views/schedules/new.html.erb:23: syntax error, unexpected ensure, expecting ')'
+          ensure
+          ^~~~~~
+/home/ec2-user/environment/MySchedule/app/views/schedules/new.html.erb:25: syntax error, unexpected end, expecting ')'
+          end
+          ^~~):
+  
+app/views/schedules/new.html.erb:15: syntax error, unexpected true, expecting ')'
+app/views/schedules/new.html.erb:15: Can't assign to true
+app/views/schedules/new.html.erb:15: Can't assign to false
+app/views/schedules/new.html.erb:15: syntax error, unexpected ')', expecting '='
+app/views/schedules/new.html.erb:20: syntax error, unexpected end, expecting ')'
+app/views/schedules/new.html.erb:23: syntax error, unexpected ensure, expecting ')'
+app/views/schedules/new.html.erb:25: syntax error, unexpected end, expecting ')'
+Started GET "/schedules/new" for 182.248.231.162 at 2021-06-11 07:56:25 +0000
+Cannot render console from 182.248.231.162! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SchedulesController#new as HTML
+  Rendering schedules/new.html.erb within layouts/application
+  Rendered schedules/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 27ms (Views: 25.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/schedules/new" for 182.248.231.162 at 2021-06-11 07:58:42 +0000
+Cannot render console from 182.248.231.162! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SchedulesController#new as HTML
+  Rendering schedules/new.html.erb within layouts/application
+  Rendered schedules/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 19ms (Views: 17.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/schedules/new" for 182.248.231.162 at 2021-06-11 08:00:10 +0000
+Cannot render console from 182.248.231.162! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SchedulesController#new as HTML
+  Rendering schedules/new.html.erb within layouts/application
+  Rendered schedules/new.html.erb within layouts/application (2.4ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `merge' for true:TrueClass):
+    19:         </tr>
+    20:         <tr>
+    21:             <th><%= f.label :end_date, '終日' %></th>
+    22:             <td><%= f.check_box :all_day, true, false %></td><!--https://www.y-hakopro.com/entry/2020/01/22/%E3%80%90_f.check_box%E3%80%91%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF%E3%83%9C%E3%83%83%E3%82%AF%E3%82%B9%E3%82%92%E3%83%87%E3%83%95%E3%82%A9%E3%83%AB%E3%83%88%E3%81%A7%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF を参考-->
+    23:         </tr>
+    24:         <tr>
+    25:             <th><%= f.label :note, 'メモ' %></th>
+  
+app/views/schedules/new.html.erb:22:in `block in _app_views_schedules_new_html_erb__1547487960169632971_31830080'
+app/views/schedules/new.html.erb:6:in `_app_views_schedules_new_html_erb__1547487960169632971_31830080'
+Started GET "/schedules/new" for 182.248.231.162 at 2021-06-11 08:00:23 +0000
+Cannot render console from 182.248.231.162! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SchedulesController#new as HTML
+  Rendering schedules/new.html.erb within layouts/application
+  Rendered schedules/new.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/ec2-user/environment/MySchedule/app/views/schedules/new.html.erb:23: syntax error, unexpected '<'
+        </tr>
+        ^
+/home/ec2-user/environment/MySchedule/app/views/schedules/new.html.erb:25: unknown regexp options - th
+/home/ec2-user/environment/MySchedule/app/views/schedules/new.html.erb:26: syntax error, unexpected '<'
+            <td>'.freeze;@output_buffer.ap...
+            ^
+/home/ec2-user/environment/MySchedule/app/views/schedules/new.html.erb:27: unknown regexp options - tr
+/home/ec2-user/environment/MySchedule/app/views/schedules/new.html.erb:28: syntax error, unexpected '<'
+    </tbody>
+    ^
+/home/ec2-user/environment/MySchedule/app/views/schedules/new.html.erb:31: unknown regexp options - tabl
+/home/ec2-user/environment/MySchedule/app/views/schedules/new.html.erb:31: regexp encoding option 'e' differs from source encoding 'UTF-8'
+/home/ec2-user/environment/MySchedule/app/views/schedules/new.html.erb:35: unterminated string meets end of file
+          end
+              ^
+/home/ec2-user/environment/MySchedule/app/views/schedules/new.html.erb:35: syntax error, unexpected end-of-input, expecting ')'):
+  
+app/views/schedules/new.html.erb:23: syntax error, unexpected '<'
+app/views/schedules/new.html.erb:25: unknown regexp options - th
+app/views/schedules/new.html.erb:26: syntax error, unexpected '<'
+app/views/schedules/new.html.erb:27: unknown regexp options - tr
+app/views/schedules/new.html.erb:28: syntax error, unexpected '<'
+app/views/schedules/new.html.erb:31: unknown regexp options - tabl
+app/views/schedules/new.html.erb:31: regexp encoding option 'e' differs from source encoding 'UTF-8'
+app/views/schedules/new.html.erb:35: unterminated string meets end of file
+app/views/schedules/new.html.erb:35: syntax error, unexpected end-of-input, expecting ')'
+Started GET "/schedules/new" for 182.248.231.162 at 2021-06-11 08:05:44 +0000
+Cannot render console from 182.248.231.162! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SchedulesController#new as HTML
+  Rendering schedules/new.html.erb within layouts/application
+  Rendered schedules/new.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/ec2-user/environment/MySchedule/app/views/schedules/new.html.erb:23: syntax error, unexpected '<'
+        </tr>
+        ^
+/home/ec2-user/environment/MySchedule/app/views/schedules/new.html.erb:25: unknown regexp options - th
+/home/ec2-user/environment/MySchedule/app/views/schedules/new.html.erb:26: syntax error, unexpected '<'
+            <td>'.freeze;@output_buffer.ap...
+            ^
+/home/ec2-user/environment/MySchedule/app/views/schedules/new.html.erb:27: unknown regexp options - tr
+/home/ec2-user/environment/MySchedule/app/views/schedules/new.html.erb:28: syntax error, unexpected '<'
+    </tbody>
+    ^
+/home/ec2-user/environment/MySchedule/app/views/schedules/new.html.erb:31: unknown regexp options - tabl
+/home/ec2-user/environment/MySchedule/app/views/schedules/new.html.erb:31: regexp encoding option 'e' differs from source encoding 'UTF-8'
+/home/ec2-user/environment/MySchedule/app/views/schedules/new.html.erb:35: unterminated string meets end of file
+          end
+              ^
+/home/ec2-user/environment/MySchedule/app/views/schedules/new.html.erb:35: syntax error, unexpected end-of-input, expecting ')'):
+  
+app/views/schedules/new.html.erb:23: syntax error, unexpected '<'
+app/views/schedules/new.html.erb:25: unknown regexp options - th
+app/views/schedules/new.html.erb:26: syntax error, unexpected '<'
+app/views/schedules/new.html.erb:27: unknown regexp options - tr
+app/views/schedules/new.html.erb:28: syntax error, unexpected '<'
+app/views/schedules/new.html.erb:31: unknown regexp options - tabl
+app/views/schedules/new.html.erb:31: regexp encoding option 'e' differs from source encoding 'UTF-8'
+app/views/schedules/new.html.erb:35: unterminated string meets end of file
+app/views/schedules/new.html.erb:35: syntax error, unexpected end-of-input, expecting ')'
+Started GET "/schedules/new" for 182.248.231.162 at 2021-06-11 08:05:53 +0000
+Cannot render console from 182.248.231.162! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SchedulesController#new as HTML
+  Rendering schedules/new.html.erb within layouts/application
+  Rendered schedules/new.html.erb within layouts/application (2.3ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `merge' for true:TrueClass):
+    19:         </tr>
+    20:         <tr>
+    21:             <th><%= f.label :end_date, '終日' %></th>
+    22:             <td><%= f.check_box :all_day, true, false %></td><!--https://www.y-hakopro.com/entry/2020/01/22/%E3%80%90_f.check_box%E3%80%91%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF%E3%83%9C%E3%83%83%E3%82%AF%E3%82%B9%E3%82%92%E3%83%87%E3%83%95%E3%82%A9%E3%83%AB%E3%83%88%E3%81%A7%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF を参考-->
+    23:         </tr>
+    24:         <tr>
+    25:             <th><%= f.label :note, 'メモ' %></th>
+  
+app/views/schedules/new.html.erb:22:in `block in _app_views_schedules_new_html_erb__1547487960169632971_69932101248500'
+app/views/schedules/new.html.erb:6:in `_app_views_schedules_new_html_erb__1547487960169632971_69932101248500'
+Started GET "/schedules/new" for 182.248.231.162 at 2021-06-11 08:17:59 +0000
+Cannot render console from 182.248.231.162! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SchedulesController#new as HTML
+  Rendering schedules/new.html.erb within layouts/application
+  Rendered schedules/new.html.erb within layouts/application (94.2ms)
+Completed 500 Internal Server Error in 102ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `form_group' for #<ActionView::Helpers::FormBuilder:0x0000000005436ea8>):
+    19:         </tr>
+    20:         <tr>
+    21:             <th><%= f.label :end_date, '終日' %></th>
+    22:             <td><%= f.form_group :all_day %><%= f.check_box :all_day, true, false %></td><!--https://www.y-hakopro.com/entry/2020/01/22/%E3%80%90_f.check_box%E3%80%91%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF%E3%83%9C%E3%83%83%E3%82%AF%E3%82%B9%E3%82%92%E3%83%87%E3%83%95%E3%82%A9%E3%83%AB%E3%83%88%E3%81%A7%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF を参考-->
+    23:         </tr>
+    24:         <tr>
+    25:             <th><%= f.label :note, 'メモ' %></th>
+  
+app/views/schedules/new.html.erb:22:in `block in _app_views_schedules_new_html_erb__1547487960169632971_44071620'
+app/views/schedules/new.html.erb:6:in `_app_views_schedules_new_html_erb__1547487960169632971_44071620'

@@ -1,0 +1,40 @@
+<div class="information">
+    <h2>スケジュール一覧</h2>
+</div>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>タイトル</th>
+            <th>開始日</th>
+            <th>終了日</th>
+            <th>終日</th>
+            <th>スケジュール更新日時</th>
+            <th>確認</th>
+            <th>編集</th>
+            <th>削除</th>
+        </tr>
+    </thead>
+    
+    <tbody>
+        <tr>
+            <% @schedules.each do |schedule| %>
+            <td><%= schedule.id %></td>
+            <td><%= schedule.title %></td>
+            <td><%= schedule.start_date %></td>
+            <td><%= schedule.end_date %></td>
+            <td><strong>○</strong></td>
+            <td><%= schedule.created_at.to_s(:datetime_jp) %></td>
+            <% end %>
+            <td>
+                <a href="/posts/427">確認</a>
+            </td>
+            <td>
+                <a href="/posts/427/edit">編集</a>
+            </td>
+            <td>
+                <a data-confirm="本当に削除しますか？" rel="nofollow" data-method="delete" href="/posts/427">削除</a>
+            </td>
+        </tr>
+    </tbody>
